@@ -10,6 +10,7 @@ export const Asteroid = (props: any) => {
     const prop2 = props.second;
     const prop3 = props.third;
     const prop4 = props.fourth;
+    const color = props.color;
 
     const particleSize = props.particleSize;
 
@@ -27,7 +28,7 @@ export const Asteroid = (props: any) => {
             scale={[view.viewport.height/15, view.viewport.height/15, view.viewport.height/15]}
         >
           <torusGeometry args={[prop1, prop2, prop3, prop4]} />
-          <pointsMaterial color="#555555" size={particleSize} sizeAttenuation />
+          <pointsMaterial color={color} size={particleSize} sizeAttenuation />
         </points>
       );
 };

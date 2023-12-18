@@ -8,7 +8,7 @@ export const Sun = () => {
 
     useFrame(() => {
         if(mesh.current) {
-            mesh.current.rotation.x += 0.01;
+            mesh.current.rotation.x -= 0.01;
         }
     });
     
