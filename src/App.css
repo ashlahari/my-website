@@ -1,48 +1,127 @@
-@import url("https://fonts.googleapis.com/css?family=Kurale");
+@import url("https://fonts.googleapis.com/css?family=Aldrich");
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+
+}
+
+body::before {
+  content: '';
+  background: url('./assets/images/backgrounds/stars_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9; 
+}
 
 .App {
   text-align: center;
 }
 
-.spaceDiv {
+.pageDiv {
   height: 100vh;
   width: 100vw;
-  background-color: black;
-  opacity: 70%;
+  /* background-color: black; */
   z-index: -1;
   position: absolute;
   overflow: hidden;
 }
 
-.intro {
-  color: whitesmoke;
-  font-size: 8vh;
-  font-weight: bold;
+.introMainDiv {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  display: flex;
-  justify-content: left;
+}
+
+.introText {
+  display: block;
 }
 
 .introName {
-  margin: auto;
   animation: fadeIn 7s;
-  font-family: 'Kurale';
-  margin-top: 25vh;
-  padding-left: 8vw;
+  font-family: 'Aldrich';
+  font-size: 7vh;
+  color: #ffeeb5;
 }
 
-.introDev {
-  margin: auto;
-  font-size: 5vh;
+.introTitle {
+  font-size: 4vh;
   animation: fadeIn 7s;
-  font-family: 'Kurale';
-  font-weight: normal;
+  font-family: 'Aldrich';
+  color: whitesmoke
 }
 
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.aboutDiv {
+  font-size: 10vh;
+  font-family: 'Aldrich';
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+  color: #ffeeb5;
+}
+
+.cardStyle {
+  background-color: black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.aboutText {
+  font-family: 'Aldrich';
+  font-size: 3vh;
+  color: whitesmoke;
+}
+
+.skills {
+  font-size: 8vh;
+  font-family: 'Aldrich';
+  margin-top: 5vh;
+  color: whitesmoke;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 4vw;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.skillsCard {
+  font-size: 2vh;
+  font-family: 'Aldrich';
+  margin-top: 1vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+  /* padding-left: 4vw; */
+  overflow: hidden;
+  background-color: #eeea88;
+  height: 70vh;
+  width: 40vh;
+}
   
+.skillsCarousel {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.p-carousel-prev, .p-carousel-next {
+  color: whitesmoke;
+}
+
+.cardDiv {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}

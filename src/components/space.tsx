@@ -5,7 +5,7 @@ import { Asteroid } from '../components/asteroid';
 
 export const Space = (props: any) => {    
     return (
-        <div className="spaceDiv">
+        <div className="pageDiv">
             <Canvas>
                 <OrbitControls />
                 <ambientLight intensity={1}></ambientLight>
