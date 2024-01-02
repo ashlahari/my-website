@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Aldrich");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
 
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  position: relative;
-
+  overflow-y: auto;
+  height: 100%;
 }
 
 body::before {
@@ -21,17 +21,30 @@ body::before {
   opacity: 0.9; 
 }
 
+body::-webkit-scrollbar {
+  width: 5px; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ffeeb5; 
+  border-radius: 4px; 
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #000000; 
+  border-radius: 4px; 
+}
+
 .App {
   text-align: center;
 }
 
 .pageDiv {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   /* background-color: black; */
   z-index: -1;
   position: absolute;
-  overflow: hidden;
 }
 
 .introMainDiv {
@@ -46,15 +59,16 @@ body::before {
 
 .introName {
   animation: fadeIn 7s;
-  font-family: 'Aldrich';
+  font-family: 'Merriweather';
   font-size: 7vh;
   color: #ffeeb5;
+  font-weight: bold;
 }
 
 .introTitle {
   font-size: 4vh;
   animation: fadeIn 7s;
-  font-family: 'Aldrich';
+  font-family: 'Merriweather';
   color: whitesmoke
 }
 
@@ -64,29 +78,62 @@ body::before {
 }
 
 .aboutDiv {
-  font-size: 10vh;
-  font-family: 'Aldrich';
-  margin-top: 8vh;
+  font-size: 8vh;
+  font-weight: bold;
+  font-family: 'Merriweather';
+  margin-top: 5vh;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   color: #ffeeb5;
+  border-bottom: 3px #ffeeb5 solid;
+}
+
+.aboutImg {
+  border: 5px #ffeeb5 solid;
+  padding: 3vh;
+  object-fit: cover;
+  object-position: 50% 100%;
 }
 
 .cardStyle {
-  background-color: black;
+  background-color: #3d3d3d;
   border-radius: 8px;
   padding: 10px;
+  box-shadow: 10px 10px black;
 }
 
 .aboutText {
-  font-family: 'Aldrich';
+  margin-top: 3vh;
+  font-family: 'Merriweather';
   font-size: 3vh;
   color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  height: 40vh;
+  overflow-x: hidden;
+  scrollbar-color: #ffeeb5;
+  padding: 2vh;
+}
+
+.aboutText::-webkit-scrollbar {
+  width: 5px; 
+}
+
+.aboutText::-webkit-scrollbar-thumb {
+  background-color: #ffeeb5; 
+  border-radius: 4px; 
+}
+
+.aboutText::-webkit-scrollbar-track {
+  background-color: #000000; 
+  border-radius: 4px; 
 }
 
 .skills {
   font-size: 8vh;
-  font-family: 'Aldrich';
+  font-family: 'Merriweather';
   margin-top: 5vh;
   color: whitesmoke;
   display: flex;
@@ -98,7 +145,7 @@ body::before {
 
 .skillsCard {
   font-size: 2vh;
-  font-family: 'Aldrich';
+  font-family: 'Merriweather';
   margin-top: 1vh;
   color: black;
   display: flex;

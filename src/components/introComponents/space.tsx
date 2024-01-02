@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Sun } from '../components/sun';
-import { Asteroid } from '../components/asteroid';
+import { Sun } from './sun';
+import { Asteroid } from './asteroid';
 
 export const Space = (props: any) => {    
     return (
