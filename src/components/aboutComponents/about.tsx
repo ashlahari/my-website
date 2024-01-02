@@ -27,10 +27,10 @@ export const About = () => {
       }, []);
     
       const getPositionStyle = () => {
-        if (windowSize.width < 1024) {
+        if (windowSize.width <= 1024) {
           return {
             width: '65vw',
-            height: '50vh'
+            height: '60vh'
           };
         } else {
           return {
@@ -43,22 +43,24 @@ export const About = () => {
     return (
         <div className="pageDiv">
             <div style={{display: 'flex', justifyContent: 'center'}}>
-                <div className="grid" style={{ marginTop: '5vh', width: '80vw' }}>
-                    <div className="col-12 md:col-12 lg:col-6">
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div className="grid" style={{ marginTop: '5vh', width: '100vw' }}>
+                    <div className="col-12 xl:col-6" style={{ backgroundColor: '#3d3d3d' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', top: '20px', position: 'relative' }}>
+                          <div className="aboutImgDiv">
                             <img src={require("../../assets/images/about/My_Photo.jpg")} alt="My Photo" className="aboutImg" style={{...getPositionStyle()}}/>
+                          </div>
                         </div>
                     </div>
-                    <div className="col-12 md:col-12 lg:col-6 ">
+                    <div className="col-12 xl:col-6">
                         <div>
                             <div className="aboutDiv">
-                                About Me
+                                About
                             </div>
                             <div className="aboutText">
                                 {aboutData.about}
                             </div>
-                            <div style={{ height: '10vh' }}>
-                                <Button outlined style={{color: '#ffeeb5'}}>Resume</Button>
+                            <div className="resumeDiv">
+                                <Button outlined className="buttonStyle" style={{ height: '45px', width: '180px' }}>Download Resume</Button>
                             </div>
                         </div>
                     </div>
