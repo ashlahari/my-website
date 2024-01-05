@@ -1,18 +1,12 @@
-import React from 'react';
 import './App.css';
-import { Space } from './components/introComponents/space';
-import { Intro } from './components/introComponents/intro';
-import { About } from './components/aboutComponents/about';
-import { Skills } from './components/skills';
+import { StickyMenu } from './components/menuComponents/stickyMenu';
 import 'primeflex/primeflex.css';
+import 'primeicons/primeicons.css';
 
 function App() {
   return (
     <div className="App">
-        <Space />
-        <Intro />
-        <About />
-        {/* <Skills /> */}
+        <StickyMenu />
     </div>
   );
 }

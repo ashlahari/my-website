@@ -10,6 +10,8 @@ export const About = () => {
         width: window.innerWidth,
         height: window.innerHeight,
       });
+
+    const [isVisible, setIsVisible] = useState(false);
     
       const updateWindowSize = () => {
         setWindowSize({
@@ -25,33 +27,64 @@ export const About = () => {
           window.removeEventListener('resize', updateWindowSize);
         };
       }, []);
+
+      useEffect(() => {
+        const handleScroll = () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          const lowerThreshold = window.innerHeight * 0.5;
+          const upperThreshold = window.innerHeight * 1.5;
+          setIsVisible(scrollY > lowerThreshold && scrollY <= upperThreshold);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
     
       const getPositionStyle = () => {
         if (windowSize.width <= 1024) {
           return {
-            width: '65vw',
-            height: '60vh'
+            width: '60vw',
+            height: '66vh'
           };
         } else {
           return {
             width: '30vw',
-            height: '80vh'
+            height: '75vh'
+          };
+        }
+      };
+
+      const getPositionStyleInnerDiv = () => {
+        if (windowSize.width > 1024) {
+          return {
+            justifyContent: 'right',
+            marginRight: '2vw'
+          };
+        } else {
+          return {
+            justifyContent: 'center',
           };
         }
       };
 
     return (
-        <div className="pageDiv">
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-                <div className="grid" style={{ marginTop: '5vh', width: '100vw' }}>
-                    <div className="col-12 xl:col-6" style={{ backgroundColor: '#3d3d3d' }}>
-                        <div style={{ display: 'flex', justifyContent: 'center', top: '20px', position: 'relative' }}>
-                          <div className="aboutImgDiv">
+        <div className={`fade-in ${isVisible ? 'visible' : ''} pageDiv`}>
+            <div style={{display: 'flex', marginTop: '8vh', ...getPositionStyleInnerDiv()}}>
+                <div className="grid aboutInnerDiv" style={{ width: '90vw', height: '100%' }}>
+                    <div className="col-12 xl:col-6 ">
+                      <div>
+                        <div className="aboutImgDiv">
+                          <div>
                             <img src={require("../../assets/images/about/My_Photo.jpg")} alt="My Photo" className="aboutImg" style={{...getPositionStyle()}}/>
                           </div>
                         </div>
+                      </div>
                     </div>
-                    <div className="col-12 xl:col-6">
+                    <div className="col-12 xl:col-6" style={{ background: 'rgba(0, 0, 0, 0.8)', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
                         <div>
                             <div className="aboutDiv">
                                 About

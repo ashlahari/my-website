@@ -1,5 +1,5 @@
 import { Carousel } from 'primereact/carousel';
-import { SkillsCard } from '../components/skillsCard';
+import { SkillsCard } from './skillsCard';
         
 export const Skills = () => {
 
