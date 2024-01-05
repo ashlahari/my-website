@@ -1,68 +1,62 @@
-import { Carousel } from 'primereact/carousel';
+import { useState, useEffect } from 'react';
 import { SkillsCard } from './skillsCard';
-        
+  
 export const Skills = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
 
-    const responsiveOptions = [
-        {
-            breakpoint: '1199px',
-            numVisible: 3,
-            numScroll: 1
-        },
-        {
-            breakpoint: '991px',
-            numVisible: 2,
-            numScroll: 1
-        },
-        {
-            breakpoint: '767px',
-            numVisible: 1,
-            numScroll: 1
+    const updateWindowSize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', updateWindowSize);
+    
+        return () => {
+          window.removeEventListener('resize', updateWindowSize);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          const lowerThreshold = window.innerHeight * 0.5;
+          setIsVisible(scrollY > lowerThreshold);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const getPositionStyleDiv = () => {
+        if (windowSize.width > 1024) {
+          return {
+            justifyContent: 'right',
+            marginRight: '2vw'
+          };
+        } else {
+          return {
+            justifyContent: 'center',
+          };
         }
-    ];
-
-    const mySkills = [
-        {
-            title: 'C#',
-            cardImg: '/assets/images/c_sharp_logo.png',
-            years: 3,
-        },
-        {
-            title: 'ASP .NET',
-            cardImg: '/assets/images/asp.net-logo.png',
-            years: 3,
-        },
-        {
-            title: 'MS SQL Server',
-            cardImg: '/assets/images/microsoft-sql-server-logo.png',
-            years: 3,
-        },
-        {
-            title: 'React',
-            cardImg: '/assets/images/react-logo.png',
-            years: 1,
-        },
-        {
-            title: 'React',
-            cardImg: '/assets/images/react-logo.png',
-            years: 1,
-        },
-    ]
-
-    const carouselTemplate = (skill: any) => {
-        return(
-            <SkillsCard
-                title={skill.title}
-                cardImg={skill.cardImg}
-                years={skill.years}
-            />
-        );
-    }
+    };
+    
     return (
-        <div className="pageDiv">
-            <div className="skills">Skills</div>
-            <div className="skillsCarousel">
-                <Carousel value={mySkills} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={carouselTemplate} /> 
+        <div className={`fade-in ${isVisible ? 'visible' : ''} pageDiv`}>
+            <div style={{display: 'flex', marginTop: '3vh', ...getPositionStyleDiv()}}>
+                <div className="skillsMainDiv">
+                    <div className="skillsDiv">Skills</div>
+                </div>
             </div>
         </div>
     );

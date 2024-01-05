@@ -1,5 +1,23 @@
 {
     "username": "Aishwarya", 
     "title": "Software Engineer",
-    "about": "I'm a software engineer with four years of experience in the industry. I graduated with a master's degree in Computer Science (Scientists and Engineers) from the University of Southern California in December 2023.\nPrior to completing my master's degree, I worked as a full stack developer at Accenture in India, with a focus on ASP .NET web applications."
+    "about": "I'm a software engineer with four years of experience in the industry. I graduated with a master's degree in Computer Science (Scientists and Engineers) from the University of Southern California in December 2023.\nPrior to completing my master's degree, I worked as a full stack developer at Accenture in India, with a focus on ASP .NET web applications.",
+    "skill": [
+        {
+            "title": "C#",
+            "percentage": "85%"
+        },
+        {
+            "title": "ASP .NET",
+            "percentage": "85%"
+        },
+        {
+            "title": "MS SQL Server",
+            "percentage": "85%"
+        },
+        {
+            "title": "React",
+            "percentage": "85%"
+        }
+    ]
 } 

@@ -3,11 +3,13 @@ import { useMenu } from './menuContext';
 import { Button } from 'primereact/button';
 import { Intro } from '../introComponents/intro';
 import { About } from '../aboutComponents/about';
+import { Skills } from '../skillsComponents/skills';
 
 export const StickyMenu = () => {
     const { isMenuVisible } = useMenu();
     const introRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
+    const skillsRef = useRef<HTMLDivElement>(null);
 
     const scrollToIntro = () => {
         if (introRef.current) {
@@ -18,6 +20,12 @@ export const StickyMenu = () => {
     const scrollToAbout = () => {
         if (aboutRef.current) {
           aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const scrollToSkills = () => {
+        if (skillsRef.current) {
+            skillsRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -86,6 +94,7 @@ export const StickyMenu = () => {
                                     tooltipOptions={{
                                         className:'toolTipOptions'
                                     }}
+                                    onClick={() => scrollToSkills()}
                                 >
                                 </Button>
                             </li>
@@ -109,12 +118,16 @@ export const StickyMenu = () => {
                 </div>
             </div>
 
-            <div ref={introRef}>
+            <div ref={introRef} style={{ padding: '5px' }}>
                 <div><Intro /></div>
             </div>
 
-            <div ref={aboutRef}>
+            <div ref={aboutRef} style={{ padding: '5px' }}>
                 <div><About /></div>
+            </div>
+
+            <div ref={skillsRef} style={{ padding: '5px' }}>
+                <div><Skills /></div>
             </div>
         </div>
     );

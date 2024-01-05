@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'primereact/button';
         
-
 export const About = () => {
     var aboutData = require("../../userData/userData.json");
+    const [isVisible, setIsVisible] = useState(false);
 
     // Position the user's photo according to the screen size
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-
-    const [isVisible, setIsVisible] = useState(false);
     
       const updateWindowSize = () => {
         setWindowSize({
@@ -53,7 +51,7 @@ export const About = () => {
         } else {
           return {
             width: '30vw',
-            height: '75vh'
+            height: '85vh'
           };
         }
       };
@@ -72,8 +70,8 @@ export const About = () => {
       };
 
     return (
-        <div className={`fade-in ${isVisible ? 'visible' : ''} pageDiv`}>
-            <div style={{display: 'flex', marginTop: '8vh', ...getPositionStyleInnerDiv()}}>
+        <div className={`fade-in ${isVisible ? 'visible' : ''}`}>
+            <div style={{display: 'flex', marginTop: '1vh', ...getPositionStyleInnerDiv()}}>
                 <div className="grid aboutInnerDiv" style={{ width: '90vw', height: '100%' }}>
                     <div className="col-12 xl:col-6 ">
                       <div>
@@ -84,7 +82,7 @@ export const About = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 xl:col-6" style={{ background: 'rgba(0, 0, 0, 0.8)', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
+                    <div className="col-12 xl:col-6">
                         <div>
                             <div className="aboutDiv">
                                 About
