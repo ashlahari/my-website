@@ -60,20 +60,22 @@ export const About = () => {
         if (windowSize.width > 1024) {
           return {
             justifyContent: 'right',
-            marginRight: '2vw'
+            marginRight: '1vw',
+            marginTop: '1vh'
           };
         } else {
           return {
             justifyContent: 'center',
+            marginTop: '8vh'
           };
         }
       };
 
     return (
         <div className={`fade-in ${isVisible ? 'visible' : ''}`}>
-            <div style={{display: 'flex', marginTop: '1vh', ...getPositionStyleInnerDiv()}}>
+            <div style={{display: 'flex', ...getPositionStyleInnerDiv()}}>
                 <div className="grid aboutInnerDiv" style={{ width: '90vw', height: '100%' }}>
-                    <div className="col-12 xl:col-6 ">
+                    <div className="col-12 xl:col-6">
                       <div>
                         <div className="aboutImgDiv">
                           <div>
@@ -82,7 +84,7 @@ export const About = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 xl:col-6">
+                    <div className="col-12 xl:col-6" style={{background: 'rgba(58, 58, 58, 0.8)'}}>
                         <div>
                             <div className="aboutDiv">
                                 About

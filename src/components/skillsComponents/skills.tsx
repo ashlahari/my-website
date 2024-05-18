@@ -15,6 +15,8 @@ export const Skills = () => {
         });
     };
 
+    var skillsData = require("../../userData/userData.json");
+
     useEffect(() => {
         window.addEventListener('resize', updateWindowSize);
     
@@ -27,7 +29,8 @@ export const Skills = () => {
         const handleScroll = () => {
           const scrollY = window.scrollY || document.documentElement.scrollTop;
           const lowerThreshold = window.innerHeight * 0.5;
-          setIsVisible(scrollY > lowerThreshold);
+          const upperThreshold = window.innerHeight * 1.5;
+          setIsVisible(scrollY > upperThreshold);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -53,9 +56,47 @@ export const Skills = () => {
     
     return (
         <div className={`fade-in ${isVisible ? 'visible' : ''} pageDiv`}>
-            <div style={{display: 'flex', marginTop: '3vh', ...getPositionStyleDiv()}}>
+            <div style={{display: 'flex', marginTop: '3vh', height:'100%', ...getPositionStyleDiv()}}>
                 <div className="skillsMainDiv">
                     <div className="skillsDiv">Skills</div>
+                    <div className="skillsScrollDiv">
+                      <div className="skillsSectionDiv">Programming Languages</div>
+                      <div className="grid skillsGrid">
+                          {skillsData.skills !== null && (
+                              skillsData.programming.map((skill: any) => {
+                                  return(
+                                      <div style={{ margin: '40px' }}>
+                                          <SkillsCard title={skill.title} image={skill.image} />
+                                      </div>
+                                  );
+                              })
+                          )}
+                      </div>
+                      <div className="skillsSectionDiv">Frontend</div>
+                      <div className="grid skillsGrid">
+                          {skillsData.skills !== null && (
+                              skillsData.frontend.map((skill: any) => {
+                                  return(
+                                      <div style={{ margin: '40px' }}>
+                                          <SkillsCard title={skill.title} image={skill.image} />
+                                      </div>
+                                  );
+                              })
+                          )}
+                      </div>
+                      <div className="skillsSectionDiv">Backend</div>
+                      <div className="grid skillsGrid">
+                          {skillsData.skills !== null && (
+                              skillsData.backend.map((skill: any) => {
+                                  return(
+                                      <div style={{ margin: '40px' }}>
+                                          <SkillsCard title={skill.title} image={skill.image} />
+                                      </div>
+                                  );
+                              })
+                          )}
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>

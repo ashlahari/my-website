@@ -2,22 +2,66 @@
     "username": "Aishwarya", 
     "title": "Software Engineer",
     "about": "I'm a software engineer with four years of experience in the industry. I graduated with a master's degree in Computer Science (Scientists and Engineers) from the University of Southern California in December 2023.\nPrior to completing my master's degree, I worked as a full stack developer at Accenture in India, with a focus on ASP .NET web applications.",
-    "skill": [
+    "programming": [
         {
             "title": "C#",
-            "percentage": "85%"
+            "image": "c_sharp_logo.png"
         },
         {
-            "title": "ASP .NET",
-            "percentage": "85%"
+            "title": "Java",
+            "image": "java-logo.png"
         },
         {
-            "title": "MS SQL Server",
-            "percentage": "85%"
+            "title": "C++",
+            "image": "c-plus-plus-logo.png"
         },
+        {
+            "title": "C",
+            "image": "c-logo.png"
+        },
+        {
+            "title": "SQL",
+            "image": "sql-logo.png"
+        }
+    ],
+    "frontend": [
         {
             "title": "React",
-            "percentage": "85%"
+            "image": "react-logo.png"
+        },
+        {
+            "title": "TypeScript",
+            "image": "typescript-logo.png"
+        },
+        {
+            "title": "JavaScript",
+            "image": "javascript-logo.png"
+        },
+        {
+            "title": "HTML",
+            "image": "html5-logo.png"
+        },
+        {
+            "title": "CSS",
+            "image": "css-logo.png"
+        },
+        {
+            "title": "Redux",
+            "image": "redux-logo.png"
+        },
+        {
+            "title": "Primereact",
+            "image": "primereact-logo.png"
+        }
+    ],
+    "backend": [
+        {
+            "title": "ASP .NET",
+            "image": "asp.net-core-logo.png"
+        },
+        {
+            "title": "Microsoft SQL Server",
+            "image": "microsoft-sql-server-logo.png"
         }
     ]
 } 

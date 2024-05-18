@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather");
-@import url("https://fonts.googleapis.com/css?family=Chonburi");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Exo");
 
 body {
   margin: 0;
@@ -7,8 +7,8 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
-  background: url('./assets/images/backgrounds/stars_background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  /* background: url('./assets/images/backgrounds/stars_background.jpg') no-repeat center center fixed;
+  background-size: cover; */
 }
 
 body::before {
@@ -19,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(58, 58, 58, 0.4); 
+  background-color: rgba(0, 0, 0, 0.9); 
   z-index: -1;
 }
 
@@ -61,17 +61,16 @@ body::-webkit-scrollbar-track {
 .spaceDiv {
   height: 95vh;
   width: 90vw;
-  /* background: url('./assets/images/backgrounds/stars_background.jpg') no-repeat center center fixed; */
-  background-color: rgba(58, 58, 58, 0.5); 
+  background: url('./assets/images/backgrounds/stars_background.jpg') no-repeat center center fixed;
+  background-color: rgba(58, 58, 58, 0.4); 
   z-index: -1;
   position: absolute;
   padding: 5px;
   /* border: 1px #ffeeb5 solid; */
-  border-radius: 15px;
+  /* border-radius: 15px; */
   background-size: cover;
   box-shadow: -15px 15px 20px 0px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease-in-out; 
-  opacity: 0.8;
 }
 
 .introMainDiv {
@@ -92,16 +91,16 @@ body::-webkit-scrollbar-track {
 
 .introName {
   animation: fadeIn 7s;
-  font-family: 'Chonburi';
-  font-size: 7vh;
-  color: #ffeeb5;
+  font-family: 'Exo';
+  font-size: 8vh;
+  color:#ffeeb5;
   font-weight: bold;
 }
 
 .introTitle {
   font-size: 4vh;
   animation: fadeIn 7s;
-  font-family: 'Merriweather';
+  font-family: 'Poppins';
   color: whitesmoke;
 }
 
@@ -113,11 +112,11 @@ body::-webkit-scrollbar-track {
 .buttonStyle {
   color: #ffeeb5;
   background-color: black;
-  border: 1px #ffeeb5 solid;
+  border: #ffeeb5 solid;
+  border-width: thin;
   border-radius: 5px;
   justify-content: center;
   font-size: large;
-  border: 1px #ffeeb5 solid;
 }
 
 .buttonStyle:hover {
@@ -126,7 +125,7 @@ body::-webkit-scrollbar-track {
 
 .toolTipOptions {
   color: white;
-  font-family: 'MerriWeather';
+  font-family: 'Poppins';
   font-size: 12px;
   background-color: black;
   border-radius: 10px;
@@ -137,7 +136,7 @@ body::-webkit-scrollbar-track {
 .aboutDiv {
   font-size: 8vh;
   font-weight: bold;
-  font-family: 'Chonburi';
+  font-family: 'Exo';
   margin-top: 5vh;
   display: flex;
   justify-content: left;
@@ -148,8 +147,7 @@ body::-webkit-scrollbar-track {
 }
 
 .aboutInnerDiv {
-  background: rgba(58, 58, 58, 0.5);
-  border-radius: 15px;
+  /* border-radius: 15px; */
   /* border: 1px #ffeeb5 solid; */
   box-shadow: -15px 15px 20px 0px rgba(0, 0, 0, 0.8);
   height: 100%;
@@ -169,12 +167,12 @@ body::-webkit-scrollbar-track {
 .aboutImg {
   object-fit: cover;
   margin-bottom: 30px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .aboutText {
   margin-top: 4vh;
-  font-family: 'Merriweather';
+  font-family: 'Poppins';
   font-size: 2.5vh;
   color: whitesmoke;
   display: flex;
@@ -212,17 +210,10 @@ body::-webkit-scrollbar-track {
   margin-top: 2%;
 }
 
-.cardStyle {
-  background-color: #3d3d3d;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 10px 10px black;
-}
-
 .skillsDiv {
   font-size: 8vh;
   font-weight: bold;
-  font-family: 'Chonburi';
+  font-family: 'Exo';
   margin-top: 5vh;
   display: flex;
   justify-content: left;
@@ -232,9 +223,21 @@ body::-webkit-scrollbar-track {
   margin-left: 2%;
 }
 
+.skillsSectionDiv {
+  font-size: 3vh;
+  font-weight: bold;
+  font-family: 'Exo';
+  margin-top: 3vh;
+  display: flex;
+  justify-content: left;
+  color: #ffeeb5;
+  width: 90%;
+  margin-left: 2%;
+}
+
 .skillsMainDiv {
-  background: rgba(58, 58, 58, 0.5);
-  border-radius: 15px;
+  background: rgba(58, 58, 58, 0.7);
+  /* border-radius: 15px; */
   /* border: 1px #ffeeb5 solid; */
   box-shadow: -15px 15px 20px 0px rgba(0, 0, 0, 0.8);
   height: 95vh;
@@ -243,9 +246,16 @@ body::-webkit-scrollbar-track {
   position: absolute;
 }
 
+.skillsScrollDiv {
+  margin-top: 2vh;
+  height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .skillsCard {
   font-size: 2vh;
-  font-family: 'Merriweather';
+  font-family: 'Poppins';
   margin-top: 1vh;
   color: black;
   display: flex;
@@ -260,7 +270,51 @@ body::-webkit-scrollbar-track {
 .cardDiv {
   display: flex;
   justify-content: center;
-  width: 80%;
+  height: 60px;
+  width: 60px;
+  color: whitesmoke;
+  font-family: 'Poppins';
+  border-radius: 15px;
+  background: rgba(58, 58, 58, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px rgba(255, 238, 181, 0.9);
+  font-size: 3vh;
+}
+
+.cardImgDiv {
+  border-radius: 15px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.skillsGrid {
+  /* height: 80vh; */
+  overflow-y: auto;
+  /* margin: 10px; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.skillsScrollDiv::-webkit-scrollbar {
+  width: 5px; 
+}
+
+.skillsScrollDiv::-webkit-scrollbar-thumb {
+  background-color: #ffeeb5; 
+  border-radius: 4px; 
+  border: 1px black solid;
+}
+
+.skillsScrollDiv::-webkit-scrollbar-track {
+  background-color: #000000; 
+  border-radius: 4px; 
+}
+
+.p-progressbar .p-component .p-progressbar-determinate {
+  color: #ffeeb5;
 }
 
 .stickyMenuDiv {
@@ -282,8 +336,7 @@ body::-webkit-scrollbar-track {
   z-index: 200; 
   /* border-radius: 5px; */
   /* box-shadow: -15px 15px 20px 0px rgba(0, 0, 0, 0.8); */
-  font-family: 'Merriweather';
-  /* border: 1px #ffeeb5 solid; */
+  font-family: 'Poppins';
 }
 
 .sticky-menu.visible {
